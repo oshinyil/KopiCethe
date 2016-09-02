@@ -15,7 +15,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="#CCCCCC" BorderThickness="1">
-                        <Grid >
+                        <Grid Background="{Binding AmountInStock, Converter={StaticResource localAmountInStockConverter}}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -27,7 +27,7 @@
                                 <RowDefinition Height="15"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Source="{Binding ImageId, Converter={StaticResource localImageConverter}}" Grid.RowSpan="2" VerticalAlignment="Center"></Image>
-                            <Label Content="{Binding Name}" FontSize="14" Grid.Column="1"  Grid.ColumnSpan="2" FontWeight="Bold"></Label>
+                            <Label Content="{Binding CoffeeName, Converter={StaticResource localDoNothingConverter}}" FontSize="14" Grid.Column="1"  Grid.ColumnSpan="2" FontWeight="Bold"></Label>
                             <StackPanel  Grid.Row="1" Orientation="Horizontal" Grid.Column="1">
                                 <Label Content="Stock: "></Label>
                                 <Label Content="{Binding AmountInStock}"></Label>

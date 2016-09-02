@@ -8,6 +8,8 @@
         <ResourceDictionary>
             <converter:PriceConverter x:Key="localPriceConverter"></converter:PriceConverter>
             <converter:ImageConverter x:Key="localImageConverter"></converter:ImageConverter>
+            <converter:AmountInStockConverter x:Key="localAmountInStockConverter"></converter:AmountInStockConverter>
+            <converter:DoNothingConverter x:Key="localDoNothingConverter"></converter:DoNothingConverter>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />

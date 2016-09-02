@@ -63,6 +63,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\AmountInStockConverter.cs" />
+    <Compile Include="Converters\DoNothingConverter.cs" />
     <Compile Include="Converters\ImageConverter.cs" />
     <Compile Include="Converters\PriceConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
