@@ -2,6 +2,7 @@
 using KopiCethe.StockManagement.Model;
 using MahApps.Metro.Controls;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -14,6 +15,7 @@ namespace KopiCethe.StockManagement.App.Views
     public partial class CoffeeOverviewView : MetroWindow
     {
         private Coffee selectedCoffee;
+        private List<Coffee> coffees;
 
         public CoffeeOverviewView()
         {
@@ -25,7 +27,8 @@ namespace KopiCethe.StockManagement.App.Views
         private void LoadData()
         {
             var coffeeDataService = new CoffeeDataService();
-            CoffeeListView.ItemsSource = coffeeDataService.GetAllCoffees();
+            coffees = coffeeDataService.GetAllCoffees();
+            CoffeeListView.ItemsSource = coffees;
         }
 
         private void EditCoffeeButton_Click(object sender, RoutedEventArgs e)
