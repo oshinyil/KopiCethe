@@ -12,6 +12,11 @@ namespace KopiCethe.StockManagement.App.Services
             this.repository = repository;
         }
 
+        public CoffeeDataService()
+        {
+            this.repository = new CoffeeRepository();
+        }
+
         public Coffee GetCoffeeDetail(int coffeeId)
         {
             return repository.GetCoffeeById(coffeeId);
