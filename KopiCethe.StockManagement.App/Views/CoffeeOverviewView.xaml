@@ -70,8 +70,9 @@
             <Label Grid.Row="5" Grid.Column="1" Name="StockAmountLabel"></Label>
             <Label Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedLabel"></Label>
 
-            <StackPanel Grid.Row="7" >
+            <StackPanel Grid.Row="7" Orientation="Horizontal">
                 <Button  Name="EditCoffeeButton" Click="EditCoffeeButton_Click"  Content="Edit coffee"></Button>
+                <Button  Name="AddFakeCoffeeButton" Click="AddFakeCoffeeButton_Click"  Content="Add extra coffee"></Button>
             </StackPanel>
         </Grid>
     </Grid>

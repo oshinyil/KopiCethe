@@ -27,7 +27,7 @@
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Name="CoffeeNameLabel" 
-                   Content="{Binding Name}"
+                   Content="{Binding Name, Mode=OneWay}"
                    Grid.ColumnSpan="2" FontSize="40" FontWeight="Bold"></Label>
 
             <Image Name="CoffeeImage" Grid.Row="1"
@@ -46,8 +46,8 @@
             <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ExtraDescription}"></TextBox>
 
             <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Button Name="ChangeCoffeeButton" Click="ChangeCoffeeButton_Click" Margin="5" Content="Change coffee"></Button>
                 <Button Name="SaveCoffeeButton" Click="SaveCoffeeButton_Click" Margin="5" Content="Save coffee"></Button>
-                <Button  Name="DeleteCoffeeButton" Click="DeleteCoffeeButton_Click"  Margin="5" Content="Delete coffee"></Button>
             </StackPanel>
 
         </Grid>

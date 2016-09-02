@@ -1,8 +1,10 @@
 ﻿using KopiCethe.StockManagement.App.Services;
+using KopiCethe.StockManagement.App.Extensions;
 using KopiCethe.StockManagement.Model;
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -15,8 +17,7 @@ namespace KopiCethe.StockManagement.App.Views
     public partial class CoffeeOverviewView : MetroWindow
     {
         private Coffee selectedCoffee;
-        private List<Coffee> coffees;
-
+        private ObservableCollection<Coffee> coffees;
         public CoffeeOverviewView()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace KopiCethe.StockManagement.App.Views
         private void LoadData()
         {
             var coffeeDataService = new CoffeeDataService();
-            coffees = coffeeDataService.GetAllCoffees();
+            coffees = coffeeDataService.GetAllCoffees().ToObservableCollection();
             CoffeeListView.ItemsSource = coffees;
         }
 
@@ -61,7 +62,19 @@ namespace KopiCethe.StockManagement.App.Views
 
         private void AddFakeCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Coffee coffee = new Coffee()
+            {
+                Id = 123,
+                Name = "Test coffee",
+                Description = "Simply the best coffee",
+                ImageId = 1,
+                AmountInStock = 1000,
+                InStock = true,
+                FirstAddedToStockDate = new DateTime(2014, 1, 3),
+                OriginCountry = Country.Ethiopia,
+                Price = 12
+            };
+            coffees.Add(coffee);
         }
     }
 }

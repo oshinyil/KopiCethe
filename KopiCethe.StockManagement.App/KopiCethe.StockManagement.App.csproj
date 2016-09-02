@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Services\CoffeeDataService.cs" />
     <Compile Include="Services\ICoffeeDataService.cs" />
     <Compile Include="App.xaml.cs">

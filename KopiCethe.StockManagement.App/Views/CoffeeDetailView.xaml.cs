@@ -23,9 +23,11 @@ namespace KopiCethe.StockManagement.App.Views
             this.DataContext = SelectedCoffee;
         }
 
-        private void DeleteCoffeeButton_Click(object sender, RoutedEventArgs e)
+        private void ChangeCoffeeButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            SelectedCoffee.Name = "Something really expensive";
+            SelectedCoffee.Price = 10000;
+
         }
 
         private void SaveCoffeeButton_Click(object sender, RoutedEventArgs e)
