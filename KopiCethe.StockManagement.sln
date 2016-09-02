@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KopiCethe.StockManagement.App", "KopiCethe.StockManagement.App\KopiCethe.StockManagement.App.csproj", "{74199F1C-2650-49A0-B466-E1468306ED75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KopiCethe.StockManagement.Model", "KopiCethe.StockManagement.Model\KopiCethe.StockManagement.Model.csproj", "{53BCDA6D-50FC-4529-A0EC-A73A4C6E77DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KopiCethe.StockManagement.DataAccess", "KopiCethe.StockManagement.DataAccess\KopiCethe.StockManagement.DataAccess.csproj", "{21940048-954C-4BD4-B132-C9BFA48A596A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{74199F1C-2650-49A0-B466-E1468306ED75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74199F1C-2650-49A0-B466-E1468306ED75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74199F1C-2650-49A0-B466-E1468306ED75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53BCDA6D-50FC-4529-A0EC-A73A4C6E77DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BCDA6D-50FC-4529-A0EC-A73A4C6E77DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BCDA6D-50FC-4529-A0EC-A73A4C6E77DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BCDA6D-50FC-4529-A0EC-A73A4C6E77DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21940048-954C-4BD4-B132-C9BFA48A596A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21940048-954C-4BD4-B132-C9BFA48A596A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21940048-954C-4BD4-B132-C9BFA48A596A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21940048-954C-4BD4-B132-C9BFA48A596A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

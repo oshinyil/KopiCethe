@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\CoffeeDataService.cs" />
+    <Compile Include="Services\ICoffeeDataService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +96,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KopiCethe.StockManagement.DataAccess\KopiCethe.StockManagement.DataAccess.csproj">
+      <Project>{21940048-954c-4bd4-b132-c9bfa48a596a}</Project>
+      <Name>KopiCethe.StockManagement.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KopiCethe.StockManagement.Model\KopiCethe.StockManagement.Model.csproj">
+      <Project>{53bcda6d-50fc-4529-a0ec-a73a4c6e77da}</Project>
+      <Name>KopiCethe.StockManagement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\coffee1.jpg" />
+    <Resource Include="Images\coffee2.jpg" />
+    <Resource Include="Images\coffee3.jpg" />
+    <Resource Include="Images\coffee4.jpg" />
+    <Resource Include="Images\coffee5.jpg" />
+    <Resource Include="Images\coffee6.jpg" />
+    <Resource Include="Images\coffee7.jpg" />
+    <Resource Include="Images\coffee8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
