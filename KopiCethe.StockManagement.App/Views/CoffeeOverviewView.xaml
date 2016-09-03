@@ -4,14 +4,21 @@
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="Kopi Cethe Store stock management" 
                       Height="480" 
-                      Width="640">
+                      Width="640"
+                      xmlns:viewmodel="clr-namespace:KopiCethe.StockManagement.App.ViewModels"
+                      >
+    <Controls:MetroWindow.DataContext>
+        <viewmodel:CoffeeOverviewViewModel></viewmodel:CoffeeOverviewViewModel>
+    </Controls:MetroWindow.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0" Margin="5"
-                  Name="CoffeeListView" SelectionChanged="CoffeeListView_SelectionChanged">
+        <ListView Grid.Column="0" Margin="5" 
+                  ItemsSource="{Binding Coffees}"
+                  SelectedItem="{Binding SelectedCoffee}"
+                  Name="CoffeeListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="#CCCCCC" BorderThickness="1">
@@ -63,16 +70,14 @@
             <Label Grid.Row="5" Content="Stock amount" FontWeight="Bold"></Label>
             <Label Grid.Row="6" Content="First time added" FontWeight="Bold"></Label>
 
-            <Label Grid.Row="1" Grid.Column="1" Name="CoffeeIdLabel"></Label>
-            <Label Grid.Row="2" Grid.Column="1" Name="CoffeeNameLabel"></Label>
-            <Label Grid.Row="3" Grid.Column="1" Name="DescriptionLabel"></Label>
-            <Label Grid.Row="4" Grid.Column="1" Name="PriceLabel"></Label>
-            <Label Grid.Row="5" Grid.Column="1" Name="StockAmountLabel"></Label>
-            <Label Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedLabel"></Label>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding SelectedCoffee.Id, Mode=OneWay}"></Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding SelectedCoffee.Name, Mode=OneWay}"></Label>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding SelectedCoffee.Description, Mode=OneWay}"></Label>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding SelectedCoffee.Price, Mode=OneWay}"></Label>
+            <Label Grid.Row="5" Grid.Column="1" Content="{Binding SelectedCoffee.AmountInStock, Mode=OneWay}"></Label>
+            <Label Grid.Row="6" Grid.Column="1" Content="{Binding SelectedCoffee.FirstAddedToStockDate, Mode=OneWay}"></Label>
 
             <StackPanel Grid.Row="7" Orientation="Horizontal">
-                <Button  Name="EditCoffeeButton" Click="EditCoffeeButton_Click"  Content="Edit coffee"></Button>
-                <Button  Name="AddFakeCoffeeButton" Click="AddFakeCoffeeButton_Click"  Content="Add extra coffee"></Button>
             </StackPanel>
         </Grid>
     </Grid>

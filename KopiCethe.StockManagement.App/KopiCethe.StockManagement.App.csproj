@@ -74,6 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\CoffeeOverviewViewModel.cs" />
     <Compile Include="Views\CoffeeDetailView.xaml.cs">
       <DependentUpon>CoffeeDetailView.xaml</DependentUpon>
     </Compile>
@@ -129,9 +130,7 @@
     <Resource Include="Images\coffee7.jpg" />
     <Resource Include="Images\coffee8.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\CoffeeDetailView.xaml">
       <SubType>Designer</SubType>
