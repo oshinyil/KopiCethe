@@ -68,13 +68,16 @@
     <Compile Include="Converters\ImageConverter.cs" />
     <Compile Include="Converters\PriceConverter.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Messages\UpdateListMessage.cs" />
     <Compile Include="Services\CoffeeDataService.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\ICoffeeDataService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utilities\CustomCommand.cs" />
+    <Compile Include="Utilities\Messenger.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\CoffeeDetailViewModel.cs" />
     <Compile Include="ViewModels\CoffeeOverviewViewModel.cs" />

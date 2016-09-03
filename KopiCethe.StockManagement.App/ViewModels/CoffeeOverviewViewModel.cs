@@ -1,11 +1,11 @@
 ﻿using KopiCethe.StockManagement.App.Extensions;
+using KopiCethe.StockManagement.App.Messages;
 using KopiCethe.StockManagement.App.Services;
+using KopiCethe.StockManagement.App.Utilities;
 using KopiCethe.StockManagement.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-using System;
-using KopiCethe.StockManagement.App.Utilities;
 
 namespace KopiCethe.StockManagement.App.ViewModels
 {
@@ -13,6 +13,7 @@ namespace KopiCethe.StockManagement.App.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private CoffeeDataService coffeeDataService;
+        private DialogService dialogService;
 
         public ICommand EditCommand { get; set; }
 
@@ -48,8 +49,17 @@ namespace KopiCethe.StockManagement.App.ViewModels
         public CoffeeOverviewViewModel()
         {
             coffeeDataService = new CoffeeDataService();
+            dialogService = new DialogService();
             LoadData();
             LoadCommands();
+
+            Messenger.Default.Register<UpdateListMessage>(this, OnUpdateListMessageReceived);
+        }
+
+        private void OnUpdateListMessageReceived(UpdateListMessage obj)
+        {
+            LoadData();
+            dialogService.CloseDetailDialog();
         }
 
         private void LoadCommands()
@@ -64,7 +74,8 @@ namespace KopiCethe.StockManagement.App.ViewModels
 
         private void EditCoffee(object obj)
         {
-
+            Messenger.Default.Send<Coffee>(selectedCoffee);
+            dialogService.ShowDetailDialog();
         }
 
         private void RaisePropertyChanged(string propertyName)
