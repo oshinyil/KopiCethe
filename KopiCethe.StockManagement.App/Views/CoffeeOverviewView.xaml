@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="150"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Name="CoffeeImage" Grid.Row="0"
+            <Image Source="{Binding SelectedCoffee.ImageId, Converter={StaticResource localImageConverter}, Mode=OneWay}" Grid.Row="0"
                    Grid.ColumnSpan="2" MaxHeight="150" MaxWidth="150"></Image>
             <Label Grid.Row="1" Content="Id" FontWeight="Bold"></Label>
             <Label Grid.Row="2" Content="Coffee name" FontWeight="Bold"></Label>

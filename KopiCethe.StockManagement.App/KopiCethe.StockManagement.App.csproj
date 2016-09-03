@@ -74,6 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\CoffeeDetailViewModel.cs" />
     <Compile Include="ViewModels\CoffeeOverviewViewModel.cs" />
     <Compile Include="Views\CoffeeDetailView.xaml.cs">
       <DependentUpon>CoffeeDetailView.xaml</DependentUpon>

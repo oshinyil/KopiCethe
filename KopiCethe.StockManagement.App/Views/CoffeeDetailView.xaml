@@ -5,7 +5,9 @@
         Title="Kopi Cethe stock management" 
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Height="400" 
-        Width="600">
+        Width="600"
+        xmlns:viewmodels="clr-namespace:KopiCethe.StockManagement.App.ViewModels"
+        >
     <ScrollViewer>
 
         <Grid Margin="5">
@@ -26,11 +28,9 @@
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Name="CoffeeNameLabel" 
-                   Content="{Binding Name, Mode=OneWay}"
-                   Grid.ColumnSpan="2" FontSize="40" FontWeight="Bold"></Label>
+            <Label Grid.Row="0" Content="{Binding Name}" Grid.ColumnSpan="2" FontSize="40" FontWeight="Bold"></Label>
 
-            <Image Name="CoffeeImage" Grid.Row="1"
+            <Image Source="{Binding ImageId}" Grid.Row="1"
                    Grid.ColumnSpan="2" MaxHeight="150" MaxWidth="150"></Image>
             <Label Grid.Row="2" Content="Id" FontWeight="Bold"></Label>
             <Label Grid.Row="3" Content="Description" FontWeight="Bold" VerticalAlignment="Center"></Label>
@@ -38,16 +38,14 @@
             <Label Grid.Row="5" Content="Stock amount" FontWeight="Bold"></Label>
             <Label Grid.Row="6" Content="First time added" FontWeight="Bold"></Label>
 
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Id}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Description}" AcceptsReturn="True" Height="75"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Price}"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding AmountInStock}"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding FirstAddedToStockDate}"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ExtraDescription}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SelectedCoffee.Id, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedCoffee.Description, Mode=TwoWay}" AcceptsReturn="True" Height="75"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SelectedCoffee.Price, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SelectedCoffee.AmountInStock, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding SelectedCoffee.FirstAddedToStockDate, Mode=TwoWay}"></TextBox>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox>
 
             <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
-                <Button Name="ChangeCoffeeButton" Click="ChangeCoffeeButton_Click" Margin="5" Content="Change coffee"></Button>
-                <Button Name="SaveCoffeeButton" Click="SaveCoffeeButton_Click" Margin="5" Content="Save coffee"></Button>
             </StackPanel>
 
         </Grid>
