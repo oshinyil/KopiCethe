@@ -46,6 +46,20 @@
             <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SelectedCoffee.ExtraDescription, Mode=TwoWay, FallbackValue='NA'}"></TextBox>
 
             <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2">
+                <Button Margin="5" Content="Save coffee">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding SaveCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button Margin="5" Content="Delete coffee">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding DeleteCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
             </StackPanel>
 
         </Grid>
