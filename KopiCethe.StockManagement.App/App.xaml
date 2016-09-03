@@ -6,6 +6,7 @@
              StartupUri="Views/CoffeeOverviewView.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <local:ViewModelLocator x:Key="mainViewModelLocator"></local:ViewModelLocator>
             <converter:PriceConverter x:Key="localPriceConverter"></converter:PriceConverter>
             <converter:ImageConverter x:Key="localImageConverter"></converter:ImageConverter>
             <converter:AmountInStockConverter x:Key="localAmountInStockConverter"></converter:AmountInStockConverter>

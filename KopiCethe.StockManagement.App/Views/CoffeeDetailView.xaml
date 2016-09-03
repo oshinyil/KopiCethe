@@ -6,7 +6,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Height="400" 
         Width="600"
-        xmlns:viewmodels="clr-namespace:KopiCethe.StockManagement.App.ViewModels"
+        DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=CoffeeDetailViewModel}"
         >
     <ScrollViewer>
 

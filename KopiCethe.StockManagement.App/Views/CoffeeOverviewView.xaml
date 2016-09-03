@@ -5,11 +5,9 @@
                       Title="Kopi Cethe Store stock management" 
                       Height="480" 
                       Width="640"
-                      xmlns:viewmodel="clr-namespace:KopiCethe.StockManagement.App.ViewModels"
+                      DataContext="{Binding Source={StaticResource mainViewModelLocator}, Path=CoffeeOverviewViewModel}"
                       >
-    <Controls:MetroWindow.DataContext>
-        <viewmodel:CoffeeOverviewViewModel></viewmodel:CoffeeOverviewViewModel>
-    </Controls:MetroWindow.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
