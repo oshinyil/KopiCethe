@@ -74,6 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Utilities\CustomCommand.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModels\CoffeeDetailViewModel.cs" />
     <Compile Include="ViewModels\CoffeeOverviewViewModel.cs" />

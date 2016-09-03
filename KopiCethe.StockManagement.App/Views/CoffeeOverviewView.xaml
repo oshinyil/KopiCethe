@@ -76,6 +76,7 @@
             <Label Grid.Row="6" Grid.Column="1" Content="{Binding SelectedCoffee.FirstAddedToStockDate, Mode=OneWay}"></Label>
 
             <StackPanel Grid.Row="7" Orientation="Horizontal">
+                <Button Command="{Binding EditCommand}" Content="Edit coffee"></Button>
             </StackPanel>
         </Grid>
     </Grid>
